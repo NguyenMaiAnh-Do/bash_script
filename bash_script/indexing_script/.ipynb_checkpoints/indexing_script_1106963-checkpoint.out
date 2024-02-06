@@ -1,0 +1,50 @@
+Fri Oct 13 17:13:52 PDT 2023
+
+node26.cluster
+
+start time: 1697242432
+
+hostname: node26
+
+
+     active environment : conda_fastqc
+    active env location : /home/ndo/.conda/envs/conda_fastqc
+            shell level : 2
+       user config file : /home/ndo/.condarc
+ populated config files : 
+          conda version : 4.10.3
+    conda-build version : not installed
+         python version : 3.6.9.final.0
+       virtual packages : __linux=3.10.0=0
+                          __glibc=2.17=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /opt/intel/intelpython3  (read only)
+      conda av data dir : /opt/intel/intelpython3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /opt/intel/intelpython3/pkgs
+                          /home/ndo/.conda/pkgs
+       envs directories : /home/ndo/.conda/envs
+                          /opt/intel/intelpython3/envs
+               platform : linux-64
+             user-agent : conda/4.10.3 requests/2.25.1 CPython/3.6.9 Linux/3.10.0-1062.18.1.el7.x86_64 centos/7.9.2009 glibc/2.17
+                UID:GID : 1360:1090
+             netrc file : None
+           offline mode : False
+
+
+bwa version
+bwa
+
+
+
+
+
+end time: 1697245794
+total run time(s): 3362
+total run time(m): 56.03
+total run time(h): .93

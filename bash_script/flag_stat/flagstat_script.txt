@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BAM_DIR=/home/ndo/01_raw_bam/
+dataset=$1
+BAM_FILE=$BAM_DIR$1.bam
+module load samtools
+
+echo $BAM_FILE
+
+echo ""
+
+samtools flagstat $BAM_FILE > $1.txt
+
+echo "Generated flagstat for $1"

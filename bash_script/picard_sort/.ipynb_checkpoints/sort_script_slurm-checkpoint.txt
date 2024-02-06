@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+#SBATCH --job-name=bwa_mem_hg38_samtools_fastq_to_bam_230723
+#SBATCH --output=/home/ndo/slurm_script/slurm_out_err/sorted_bam_%j.out
+#SBATCH --error=/home/ndo/slurm_script/slurm_out_err/sorted_bam_%j.err
+#
+#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=28
+#SBATCH --mem-per-cpu=4G
+
+cd /opt/picard
+
+bam_file="$1"     #INPUT AS A BAM FILE
+input_dir="/home/ndo/01_raw_bam/"
+out_dir="/home/ndo/02_sorted_bam/"
+
+out_name="$(realpath "${out_dir}/${bam_file}")"
+in_name="$(realpath "${input_dir}/${bam_file}")"
+echo "outname"
+echo $outname
+echo "inname"
+echo $inname
+
+call=$(java -jar picard.jar SortSam \
+        INPUT=$in_name \
+        OUTPUT=$out_name \
+        SORT_ORDER=queryname)
+
+echo $call
+eval $call
+
+echo "finish sorting bam file"

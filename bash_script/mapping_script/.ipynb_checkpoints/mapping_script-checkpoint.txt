@@ -1,0 +1,82 @@
+#!/bin/bash
+#
+#SBATCH --job-name=bwa_mem_hg38_samtools_fastq_to_bam_230723
+#SBATCH --output=/home/ndo/slurm_script/slurm_out_err/bwa_mem_%j.out
+#SBATCH --error=/home/ndo/slurm_script/slurm_out_err/bwa_mem_%j.err
+#
+#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=28
+#SBATCH --mem-per-cpu=4G
+
+datenow=$(date)
+echo $datenow
+echo ""
+srun hostname
+echo ""
+
+start=$(date +%s)
+echo "start time: $start"
+echo ""
+echo "hostname: $HOSTNAME"
+echo ""
+
+
+##################
+
+eval "$(conda shell.bash hook)"
+conda activate conda_fastqc                      ### CONDA ENVIRONMENT NAME
+conda info
+echo ""
+
+
+call="bwa" # to get the version
+echo "bwa version"
+echo $call
+eval $call
+echo ""
+
+#call="module load samtools"
+#echo $call
+#eval $call
+echo ""
+
+fastq1=$1                             ### INPUT FASTQ1
+fastq2=$2                             ### INPUT FASTQ2
+output_dir=$3                         ### OUTPUT DIRECTORY 
+
+echo "output directory: $output_dir"
+echo ""
+
+out_name=$(basename $fastq1 _1.fastq)
+echo $out_name
+
+echo $output_dir$out_name.sam
+
+# bwa mem --> samtools
+
+call=$(bwa mem \
+    -t 8 \
+    human_reference_genome/GRCh38_latest_genomic.fa \
+    $fastq1 $fastq2 | \
+        samtools view -uh )   
+    
+echo $call
+eval $call
+echo ""
+
+echo "mapping to ref, and sorting and indexing bam COMPLETE."
+echo ""
+    
+##################
+
+echo ""
+end=$(date +%s)
+echo "end time: $end"
+runtime_s=$(echo $(( end - start )))
+echo "total run time(s): $runtime_s"
+sec_per_min=60
+sec_per_hr=3600
+runtime_m=$(echo "scale=2; $runtime_s / $sec_per_min;" | bc)
+echo "total run time(m): $runtime_m"
+runtime_h=$(echo "scale=2; $runtime_s / $sec_per_hr;" | bc)
+echo "total run time(h): $runtime_h"
