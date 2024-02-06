@@ -38,7 +38,9 @@ else
         export PATH="/home/ndo/miniconda3/bin:$PATH"
     fi
 fi
-unset __conda_setup
+
+eval "$(conda shell.bash hook)"
+# unset __conda_setup
 # <<< conda initialize <<<
 
 
