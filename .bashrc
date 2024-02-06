@@ -11,33 +11,34 @@ fi
 
 # User specific aliases and functions
 #source /act/etc/profile.d/actbin.sh
+# module purge all
+# module load sratoolkit
+# module load fastqc
+# module load bwa
+# module load samtools
+# module load hisat2-2.1.0
+# module load intel-python3
+# module load vcftools-0.1.13
+# module load picard
+# module load bedops-2.4.39
 module purge all
-module load sratoolkit
-module load fastqc
-module load bwa
-module load samtools
-module load hisat2-2.1.0
-module load intel-python3
-module load vcftools-0.1.13
-module load picard
-module load bedops-2.4.39
-
+# source /act/etc/profile.d/actbin.sh
+# source ble.sh/out/ble.sh
 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ndo/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/
-null)"
+__conda_setup="$(/home/ndo/miniconda3/bin/conda shell.bash hook 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/ndo/etc/profile.d/conda.sh" ]; then
-        . "/home/ndo/etc/profile.d/conda.sh"
+    if [ -f "/home/ndo/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ndo/miniconda3/etc/profile.d/conda.sh"
     else
         export PATH="/home/ndo/miniconda3/bin:$PATH"
     fi
 fi
-# unset __conda_setup
+unset __conda_setup
 # <<< conda initialize <<<
 
 
