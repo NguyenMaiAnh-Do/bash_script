@@ -40,6 +40,7 @@ else
 fi
 
 eval "$(conda shell.bash hook)"
+eval "$(/home/ndo/miniconda3/bin/conda shell.bash hook)" 
 # unset __conda_setup
 # <<< conda initialize <<<
 
@@ -82,10 +83,10 @@ eval "$(conda shell.bash hook)"
 # # eval "$(/home/ndo/anaconda3/bin/conda shell.bash hook)" 
 # # export PATH="/home/ndo/anaconda3/bin:$PATH"  # commented out by conda initialize
 
-# export PATH="/home/ndo/bwa-0.7.17:$PATH"
-# export PATH="/home/ndo/gatk-4.3.0.0:$PATH"
-# export PATH="/home/ndo/sratoolkit.3.0.10-ubuntu64/bin:$PATH"
+export PATH="/home/ndo/bwa-0.7.17:$PATH"
+export PATH="/home/ndo/gatk-4.3.0.0:$PATH"
+export PATH="/home/ndo/sratoolkit.3.0.10-ubuntu64/bin:$PATH"
 # # Instruction to install samtools 1.18 https://www.htslib.org/download/
-# export PATH="/home/ndo/apps/samtools/bin:$PATH"
-# export PATH="/home/ndo/bcftools-1.19:$PATH"
+export PATH="/home/ndo/apps/samtools/bin:$PATH"
+export PATH="/home/ndo/bcftools-1.19:$PATH"
 # # export PATH="/home/ndo/apps/lofreq_star-2.1.4_linux-x86-64/bin/:$PATH"
