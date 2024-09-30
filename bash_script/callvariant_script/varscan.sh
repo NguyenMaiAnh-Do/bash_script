@@ -26,7 +26,7 @@ bam=/home/ndo/bash_output/05_bedtools_intersect/SRR13586007_bam_intersected.bam
 #Try with different coverage
 
 # samtools mpileup -f $ref $bam \
-# | varscan pileup2snp --min-coverage 2 --min-reads2 1 > /home/ndo/bash_output/04_callvariant_vcf/vsc_mincov2.vcf
+# | varscan pileup2snp --min-coverage 2 --min-reads2 1 > /home/ndo/bash_output/04_callvariant_vcf/vsc_mincov3_minread2.vcf
 
 samtools mpileup -f $ref $bam \
-| varscan pileup2snp --min-coverage 3 --min-reads2 2 > /home/ndo/bash_output/04_callvariant_vcf/vsc_mc3_rs2.vcf
+| varscan pileup2snp --min-coverage 3 --min-reads2 2 --output-vcf 1 > /home/ndo/bash_output/04_callvariant_vcf/vsc_mc3_rs2.vcf

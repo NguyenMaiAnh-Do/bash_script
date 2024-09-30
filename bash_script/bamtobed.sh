@@ -19,4 +19,4 @@ conda activate bedtools
 ### INTERSECT WITH BAM file (ignore the vcf output)
 
 bedtools bamtobed -i /home/ndo/bash_output/05_bedtools_intersect/SRR13586007_bam_intersected.bam \
-> bam_to_bed.bed
+> /home/ndo/bash_output/05_bedtools_intersect/bam_to_bed.bed

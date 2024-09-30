@@ -13,7 +13,7 @@ download_and_extract_sra() {
     accession=$1
 
     # Use prefetch to download the data associated with the accession
-    # prefetch "$accession" --output-directory /home/ndo/bash_output/sra_files
+    prefetch "$accession" --output-directory /home/ndo/bash_output/sra_files
 
     # Use fastq-dump to extract FASTQ files from the downloaded data
 
@@ -26,14 +26,17 @@ download_and_extract_sra() {
 }
 
 
-# download_and_extract_sra "SRR13586008"
-download_and_extract_sra "SRR13586010"
-download_and_extract_sra "SRR13586011"
-download_and_extract_sra "SRR13586012"
-download_and_extract_sra "SRR13586013"
-download_and_extract_sra "SRR13586014"
-download_and_extract_sra "SRR13586015"
-download_and_extract_sra "SRR13586016"
-download_and_extract_sra "SRR13586018"
-download_and_extract_sra "SRR13586019"
-download_and_extract_sra "SRR13586020"
+download_and_extract_sra "SRR13586106"
+# download_and_extract_sra "SRR13586112" # if above don't work
+
+
+# download_and_extract_sra "SRR13586011"
+# download_and_extract_sra "SRR13586012"
+# download_and_extract_sra "SRR13586013"
+# download_and_extract_sra "SRR13586014"
+# download_and_extract_sra "SRR13586015"
+# download_and_extract_sra "SRR13586016"
+# download_and_extract_sra "SRR13586018"
+# download_and_extract_sra "SRR13586019"
+# download_and_extract_sra "SRR13586020"
+# download_and_extract_sra "SRR13586112"
